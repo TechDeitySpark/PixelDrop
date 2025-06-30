@@ -1,91 +1,51 @@
+# 📦 PixelDrop – Secure Image Uploader with Flask & React
 
-# 📦 PixelDrop – Secure Image Uploader with Flask & S3
-
-PixelDrop is a lightweight, secure image uploader built using **Python Flask** and **Amazon S3**. It allows users to upload images through a REST API and provides temporary access via **presigned URLs**, ensuring safe and private file handling.
+PixelDrop is a modern, full-stack image uploader built with **Python Flask** backend and **React** frontend, utilizing **Amazon S3** for storage. It allows users to upload images through a REST API and provides temporary access via **presigned URLs**, ensuring safe and private file handling.
 
 ## 🚀 Features
 
-- 🔐 Upload images to a **private** S3 bucket
+- 🎨 Upload images from a clean and responsive Next.js frontend interface
+- 🔗 Backend API built with Flask handles file uploads to AWS S3
+- 🗄️ Uploaded images are stored safely in a configured S3 bucket
+- 👁️ Displays uploaded image preview after successful upload
+- 🔐 Uses AWS IAM for secure credential management
+- 📂 Organized project structure with frontend and backend code separated into folders
 - 🖼️ Generate **presigned URLs** for secure access
 - 🔄 MIME type preserved during upload
-- 📂 Configurable via `.env` (no secrets in code)
-- 🧪 Easy to test with Postman or a browser frontend
+- ⚙️ Configurable via `.env` (no secrets in code)
+- 💅 Styled with Tailwind CSS
+- 📱 Responsive design
 
 ## 🧰 Tech Stack
 
-- Python 3
+### Backend
+- Python 3.11
 - Flask
 - Boto3 (AWS SDK for Python)
 - Amazon S3
-- python-dotenv
+
+### Frontend
+- React 19.0.0
+- Next.js 15.3.4
+- TypeScript
+- Tailwind CSS
+- Axios 1.10.0
 
 ## 📁 Project Structure
-
-```
-PixelDrop/
-├── app.py              # Flask app
-├── .env                # AWS credentials (not included in repo)
-├── .gitignore
-└── requirements.txt
-```
-
-## 🔧 Setup Instructions
-
-1. **Clone the repository**
-   ```
-   git clone https://github.com/TechDeitySpark/PixelDrop.git
-   cd PixelDrop
-   ```
-
-2. **Create and activate a virtual environment**
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```
-   pip install -r requirements.txt
-   ```
-
-4. **Create a `.env` file** with your AWS credentials:
-   ```
-   AWS_ACCESS_KEY_ID=your_access_key
-   AWS_SECRET_ACCESS_KEY=your_secret_key
-   AWS_DEFAULT_REGION=eu-central-1
-   S3_BUCKET_NAME=your_bucket_name
-   ```
-
-5. **Run the app**
-   ```
-   python app.py
-   ```
-
-## 📬 API Endpoint
-
-### `POST /upload`
-
-- Form field: `image` (type: file)
-- Returns: JSON with a temporary presigned URL
-
-Example response:
-```
-{
-  "image_url": "https://your-bucket.s3.amazonaws.com/yourimage.jpg?X-Amz-Signature=..."
-}
-```
 
 ## 💡 Use Cases
 
 - Temporary file sharing
 - Secure image previews
 - Cloud integration practice project
+- Portfolio piece demonstrating full-stack development
 
 ## 🛡️ Security Notes
 
 - S3 bucket remains private; no ACLs or public access
 - `.env` is excluded via `.gitignore` to keep credentials safe
 - Presigned URLs expire automatically after 1 hour
+- CORS configured for secure frontend-backend communication
 
 ## 📖 License
 
@@ -93,4 +53,9 @@ MIT License — use freely, credit appreciated.
 
 ## 🤝 Contributions
 
-Pull requests are welcome! If you’d like to add frontend support or database logging, feel free to fork and improve.
+Pull requests are welcome! Some areas for contribution:
+- Enhanced frontend features
+- Additional image processing capabilities
+- Improved error handling
+- Performance optimizations
+- Additional test coverage
