@@ -10,3 +10,6 @@ instance/
 # Virtual environment
 venv/
 env/
+# Ignore node_modules inside frontend folder
+pixrldrop-frontend/node_modules/
+
